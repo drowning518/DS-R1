@@ -1,0 +1,29 @@
+2020/11/20(五), 109學年第一學期 資料科學應用 R小考(1)
+
+學號: A106260052       姓名: 劉映妤
+
+# (請依照規定)貼上執行程式碼及執行結果。
+詳見: R程式作業繳交方式
+http://www.hmwu.idv.tw/web/teaching/doc/R-how-homework.pdf
+
+> #2020/11/20
+> 
+> #ex1
+> xlsx_file <- "data/Calculus-score-A.csv"
+> excel_sheets(xlsx_file)
+錯誤: Can't establish that the input is either xls or xlsx.
+> mydata <- read_excel(xlsx_file, sheet = "Calculus-score-A", na = "NA")
+錯誤: Can't establish that the input is either xls or xlsx.
+> head(mydata, 6)
+Error in head(mydata, 6) : 找不到物件 'mydata'
+> 
+> #ex2
+> set.seed(123456)
+> Letters.code <- sample(LETTERS[1:5], 20, replace=T)
+> Letters.id <- ifelse(Letters.code = %A,E% , 1,
+錯誤: 未預期的 SPECIAL in "Letters.id <- ifelse(Letters.code = %A,E%"
+>        ifelse(Letters.code = %B,D%, 3,
+錯誤: 未預期的 SPECIAL in "       ifelse(Letters.code = %B,D%"
+>        ifelse(Letters.code = %C%, 2)))
+錯誤: 未預期的 SPECIAL in "       ifelse(Letters.code = %C%"
+> 
