@@ -1,0 +1,170 @@
+# 2020/12/11(五), 109學年第一學期 資料科學應用 R期中考
+> #
+> # 學號: A106260052       姓名: 劉映妤
+> #
+> # 本檔案為各題之程式碼檔，無執行結果
+> 
+> 
+> # ex1
+> study <- function(x,y){
++   #x <- 400
++   #y <- 600
++   U <- ifelse((x*1/2)*(y*1/2),
++               )
++ }
+> 
+> fare_rule <- function(d){
++   fare <- ifelse(d <= 50, 100, 
++                  ifelse(d <= 300, 100 + (d-50)*1, 400))
++   fare
++ }
+> # ex2(a)
+> library(readxl)
+> score <- read_excel("1091-SHU-R-Midterm/1091-SHU-R-Midterm/Score-109.xlsx", skip=2)
+> names(score) <- c("ID", "Calculus", "English")
+> head(score)
+# A tibble: 6 x 3
+  ID    Calculus English
+  <chr> <chr>    <chr>  
+1 No.2  88       97     
+2 No.3  76       66     
+3 No.4  89       51     
+4 No.5  46       15     
+5 No.6  16       87     
+6 No.7  32       51     
+> tail(score)
+# A tibble: 6 x 3
+  ID    Calculus English
+  <chr> <chr>    <chr>  
+1 No.70 95       14     
+2 No.71 69       96     
+3 No.72 51       100    
+4 No.73 37       50     
+5 No.74 33       92     
+6 No.75 4        37     
+>  
+> # ex2(b)
+> fail <- (60 > score$Calculus) & (60 > score$English)
+> score[fail, ]
+# A tibble: 19 x 3
+   ID    Calculus English
+   <chr> <chr>    <chr>  
+ 1 No.5  46       15     
+ 2 No.7  32       51     
+ 3 No.8  51       0      
+ 4 No.15 39       6      
+ 5 No.21 45       51     
+ 6 No.26 39       29     
+ 7 No.30 48       52     
+ 8 No.35 37       21     
+ 9 No.45 26       32     
+10 No.46 32       56     
+11 No.47 6        52     
+12 No.53 31       18     
+13 No.54 21       28     
+14 No.56 50       3      
+15 No.66 22       52     
+16 No.68 15       21     
+17 No.72 51       100    
+18 No.73 37       50     
+19 No.75 4        37     
+> 
+> # ex2(c)
+> my.cor <- function(x,y){
++   
++ }
+> new.score <- as.data.frame(score)
+> new.score[is.na(new.score)] <-0
+> new.score
+      ID Calculus English
+1   No.2       88      97
+2   No.3       76      66
+3   No.4       89      51
+4   No.5       46      15
+5   No.6       16      87
+6   No.7       32      51
+7   No.8       51       0
+8   No.9       73       1
+9  No.10       99      14
+10 No.11        3      NA
+11 No.12       15      83
+12 No.13       74      50
+13 No.14        0      81
+14 No.15       39       6
+15 No.16       46      93
+16 No.17       39      81
+17 No.18       40      NA
+18 No.19       18      60
+19 No.20       96      72
+20 No.21       45      51
+21 No.22       33      72
+22 No.23       97      75
+23 No.24       71       9
+24 No.25       65      40
+25 No.26       39      29
+26 No.27       70      62
+27 No.28       NA      98
+28 No.29       22      62
+29 No.30       48      52
+30 No.31       80      91
+31 No.32        0      64
+32 No.33       18      NA
+33 No.34       68      25
+34 No.35       37      21
+35 No.36       36      61
+36 No.37       87      38
+37 No.38       91      NA
+38 No.39       NA      38
+39 No.40       13      80
+40 No.41       79      91
+41 No.42       NA      99
+42 No.43       93      59
+43 No.44       78       0
+44 No.45       26      32
+45 No.46       32      56
+46 No.47        6      52
+47 No.48        4       9
+48 No.49        5      69
+49 No.50       63      71
+50 No.51       97      80
+51 No.52       83      95
+52 No.53       31      18
+53 No.54       21      28
+54 No.55       73      78
+55 No.56       50       3
+56 No.57       73      67
+57 No.58        8      82
+58 No.59       43      66
+59 No.60       23      95
+60 No.61       79      88
+61 No.62       26      70
+62 No.63       99      18
+63 No.64       76       9
+64 No.65       98      81
+65 No.66       22      52
+66 No.67       95      70
+67 No.68       15      21
+68 No.69       60      63
+69 No.70       95      14
+70 No.71       69      96
+71 No.72       51     100
+72 No.73       37      50
+73 No.74       33      92
+74 No.75        4      37
+> 
+> # ex2(d)
+> a <- as.numeric(new.score$Calculus)
+Warning message:
+強制變更過程中產生了 NA 
+> b <- as.numeric(new.score$English)
+Warning message:
+強制變更過程中產生了 NA 
+> cor(a,b)
+[1] NA
+> 
+> 
+> # ex3(a)
+> my.dnorm <- function(x){
++   
++ }
+> 
